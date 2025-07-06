@@ -26,3 +26,43 @@ document.querySelector('.calculate-btn')?.addEventListener('click', () => {
   const year = document.getElementById('reporte-ano')?.value||new Date().getFullYear();
   document.getElementById('result-year')?.textContent = year;
 });
+// Genera inputs dinámicos para instalaciones
+document.getElementById('num-instalaciones').addEventListener('change', e => {
+  const count = Math.max(1, parseInt(e.target.value));
+  const container = document.getElementById('nombres-instalaciones');
+  container.innerHTML = '';
+  for (let i = 1; i <= count; i++) {
+    const div = document.createElement('div');
+    div.className = 'input-group';
+    div.innerHTML = `
+      <label>Nombre instalación ${i}:</label>
+      <input type="text" name="instalacion-${i}">
+    `;
+    container.appendChild(div);
+  }
+});
+// Función genérica modo mensual/anual
+function setupMonthly(selectId, containerId, label) {
+  const select = document.getElementById(selectId);
+  const container = document.getElementById(containerId);
+  select.addEventListener('change', () => {
+    container.innerHTML = '';
+    const isMonthly = select.value === 'mensual';
+    const count = isMonthly ? 12 : 1;
+    for (let i = 1; i <= count; i++) {
+      const div = document.createElement('div');
+      div.className = 'input-group';
+      div.innerHTML = `
+        <label>${label}${isMonthly ? ' mes ' + i : ' anual'}:</label>
+        <input type="number" name="${containerId}-${i}">
+      `;
+      container.appendChild(div);
+      if (!isMonthly) break;
+    }
+  });
+  select.dispatchEvent(new Event('change'));
+}
+// Configura empleados, facturación y producción
+setupMonthly('empleados-modo',   'empleados-inputs',   'Número empleados');
+setupMonthly('facturacion-modo', 'facturacion-inputs', 'Facturación');
+setupMonthly('produccion-modo',  'produccion-inputs',  'Producción');
