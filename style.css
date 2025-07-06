@@ -30,3 +30,45 @@ body { font-family:'Exo 2',sans-serif; background:var(--bg-dark); color:var(--te
 .input-group input,
 .input-group select { width:100%; padding:.75rem; background:var(--input-bg); border:1px solid var(--border-color); border-radius:5px; color:var(--text-light); font-size:1rem; }
 .input-group select { appearance:none; }
+/* Estilos para tarjetas y formulario antecedente */
+.card {
+  background: #1f1f1f;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.card-header {
+  background: #252525;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+.card-body {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+/* Ajustes generales en antecedentes */
+.section-content h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+.input-group label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.input-group input,
+.input-group select {
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-light);
+}
