@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Huella de Carbono | TERCA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="calculator-container">
+        <header>
+            <div class="logo-text">TERCA</div>
+            <p class="slogan">TRANSFORMA RESIDUOS, CREA ENERGÍA.</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-link active" onclick="openTab(event, 'Antecedentes')">Antecedentes</button>
+            <button class="tab-link" onclick="openTab(event, 'Datos')">Datos Generales</button>
+            <button class="tab-link" onclick="openTab(event, 'Calculos')">Cálculos de Emisiones</button>
+            <button class="tab-link" onclick="openTab(event, 'Resultados')">Resultados</button>
+        </nav>
+
+        <main id="main-content">
+            <div id="Antecedentes" class="tab-content" style="display: block;">
+                <h2>¿Qué es la Huella de Carbono?</h2>
+                <p>La huella de carbono es un indicador ambiental que pretende reflejar la totalidad de gases de efecto invernadero (GEI) emitidos por efecto directo o indirecto de un individuo, organización, evento o producto.</p>
+                <p>Esta calculadora te ayudará a obtener una estimación de la huella de carbono de tu organización basándose en el GHG Protocol, el estándar internacional más utilizado.</p>
+            </div>
+
+            <div id="Datos" class="tab-content">
+                <h2>Información de la Empresa</h2>
+                <form id="info-form">
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label for="nombre-empresa">Nombre de la empresa</label>
+                            <input type="text" id="nombre-empresa" name="nombre-empresa">
+                        </div>
+                        <div class="input-group">
+                            <label for="num-empleados">Número de empleados</label>
+                            <input type="number" id="num-empleados" name="num-empleados">
+                        </div>
+                        <div class="input-group">
+                            <label for="facturacion">Facturación Anual (MXN)</label>
+                            <input type="number" id="facturacion" name="facturacion">
+                        </div>
+                         <div class="input-group">
+                            <label for="reporte-ano">Año del Reporte</label>
+                            <input type="number" id="reporte-ano" name="reporte-ano" placeholder="Ej. 2025">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div id="Calculos" class="tab-content">
+                <h2>Fuentes de Emisión (Alcance 1 y 2)</h2>
+                <form id="emissions-form">
+                    <fieldset>
+                        <legend>Consumo Eléctrico (Alcance 2)</legend>
+                        <div class="input-group">
+                            <label for="electricidad-kwh">Consumo anual de electricidad (kWh)</label>
+                            <input type="number" id="electricidad-kwh" name="electricidad-kwh" value="0">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Combustibles Fósiles (Alcance 1)</legend>
+                        <div class="input-group">
+                            <label for="gasolina-litros">Consumo anual de gasolina (Litros)</label>
+                            <input type="number" id="gasolina-litros" name="gasolina-litros" value="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="diesel-litros">Consumo anual de diésel (Litros)</label>
+                            <input type="number" id="diesel-litros" name="diesel-litros" value="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="gas-natural-m3">Consumo anual de Gas Natural (m³)</label>
+                            <input type="number" id="gas-natural-m3" name="gas-natural-m3" value="0">
+                        </div>
+                    </fieldset>
+                    <button type="button" class="calculate-btn" onclick="calculateFootprint()">Calcular Huella</button>
+                </form>
+            </div>
+
+            <div id="Resultados" class="tab-content">
+                <h2>Resultados de la Huella de Carbono</h2>
+                <div class="results-summary">
+                    <p>La huella de carbono total estimada para el año <span id="result-year"></span> es:</p>
+                    <h1 id="total-footprint">0.00</h1>
+                    <p>toneladas de CO₂ equivalente (tCO₂e)</p>
+                </div>
+                <div class="results-breakdown">
+                    <h3>Desglose de Emisiones:</h3>
+                    <p><strong>Electricidad:</strong> <span id="electricidad-result">0.00</span> tCO₂e</p>
+                    <p><strong>Combustibles Fósiles:</strong> <span id="combustibles-result">0.00</span> tCO₂e</p>
+                </div>
+                 <p class="disclaimer">
+                    <strong>Nota:</strong> Los cálculos se basan en factores de emisión promedio para México. Para un inventario de emisiones con fines de reporte oficial, se recomienda utilizar los factores específicos proporcionados por la SEMARNAT o la Comisión Reguladora de Energía (CRE).
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
