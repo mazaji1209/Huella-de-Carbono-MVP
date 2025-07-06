@@ -1,11 +1,3 @@
-// Navegación por pestañas (solo para calculos y resultados)
-function openTab(evt, tab) {
-  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
-  document.getElementById(tab).classList.add('active');
-  evt.currentTarget.classList.add('active');
-}
-
 // Cálculo de huella
 document.querySelector('.calculate-btn')?.addEventListener('click', () => {
   const fe = {
