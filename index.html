@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TERCA | Antecedentes</title>
+  <title>TERCA | Inicio</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="main.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -13,8 +12,8 @@
       <img src="logo.svg" alt="TERCA" height="32">
     </a>
     <nav class="main-nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="antecedentes.html" class="nav-link active">Antecedentes</a>
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="antecedentes.html" class="nav-link">Antecedentes</a>
       <a href="datos.html" class="nav-link">Datos</a>
       <a href="factores.html" class="nav-link">Factores</a>
       <a href="calculos.html" class="nav-link">Cálculos</a>
@@ -23,62 +22,37 @@
     </nav>
   </header>
 
-  <main class="section-content">
-    <h1>Antecedentes</h1>
-    <form id="antecedentes-form" class="form-grid">
-      <!-- Nombre de la empresa -->
-      <div class="input-group">
-        <label for="nombre-empresa">Nombre de la empresa:</label>
-        <input type="text" id="nombre-empresa" name="nombre-empresa">
-      </div>
-
-      <!-- Número de instalaciones -->
-      <div class="input-group">
-        <label for="num-instalaciones">Número de instalaciones:</label>
-        <input type="number" id="num-instalaciones" name="num-instalaciones" min="1" value="1">
-      </div>
-      <div id="nombres-instalaciones" class="sub-grid"></div>
-
-      <!-- Número de empleados -->
-      <div class="input-group">
-        <label for="empleados-modo">Número de empleados (reportar):</label>
-        <select id="empleados-modo" name="empleados-modo">
-          <option value="anual">Promedio anual</option>
-          <option value="mensual">Mensual</option>
-        </select>
-      </div>
-      <div id="empleados-inputs" class="sub-grid"></div>
-
-      <!-- Facturación -->
-      <div class="input-group">
-        <label for="facturacion-modo">Facturación (reportar):</label>
-        <select id="facturacion-modo" name="facturacion-modo">
-          <option value="anual">Promedio anual</option>
-          <option value="mensual">Mensual</option>
-        </select>
-      </div>
-      <div id="facturacion-inputs" class="sub-grid"></div>
-
-      <!-- Producción -->
-      <div class="input-group">
-        <label for="produccion-modo">Producción (reportar):</label>
-        <select id="produccion-modo" name="produccion-modo">
-          <option value="anual">Promedio anual</option>
-          <option value="mensual">Mensual</option>
-        </select>
-      </div>
-      <div id="produccion-inputs" class="sub-grid"></div>
-
-      <!-- Metodología de reporte -->
-      <div class="input-group">
-        <label for="metodologia">Metodología de reporte:</label>
-        <select id="metodologia" name="metodologia">
-          <option value="ghg">GHG Protocol</option>
-          <option value="iso">ISO 14064</option>
-          <option value="mx">Reporte de Emisiones MX</option>
-        </select>
-      </div>
-    </form>
+  <main class="home-windows">
+    <section class="window">
+      <a href="antecedentes.html">
+        <img src="antecedentes.jpg" alt="Antecedentes">
+        <div class="overlay"><h2>Antecedentes</h2></div>
+      </a>
+    </section>
+    <section class="window">
+      <a href="datos.html">
+        <img src="datos.jpg" alt="Datos Generales">
+        <div class="overlay"><h2>Datos Generales</h2></div>
+      </a>
+    </section>
+    <section class="window">
+      <a href="factores.html">
+        <img src="factores.jpg" alt="Factores de Emisión">
+        <div class="overlay"><h2>Factores de Emisión</h2></div>
+      </a>
+    </section>
+    <section class="window">
+      <a href="calculos.html">
+        <img src="calculos.jpg" alt="Cálculos de Emisiones">
+        <div class="overlay"><h2>Cálculos de Emisiones</h2></div>
+      </a>
+    </section>
+    <section class="window">
+      <a href="resultados.html">
+        <img src="resultados.jpg" alt="Resultados">
+        <div class="overlay"><h2>Resultados</h2></div>
+      </a>
+    </section>
   </main>
 </body>
 </html>
