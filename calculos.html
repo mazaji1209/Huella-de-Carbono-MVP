@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TERCA | Cálculos de Emisiones</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="logo"><img src="images/logo.svg" alt="TERCA" height="32"></a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="antecedentes.html" class="nav-link">Antecedentes</a>
+      <a href="datos.html" class="nav-link">Datos</a>
+      <a href="factores.html" class="nav-link">Factores</a>
+      <a href="calculos.html" class="nav-link active">Cálculos</a>
+      <a href="resultados.html" class="nav-link">Resultados</a>
+      <a href="contact.html" class="cta">Contact Us</a>
+    </nav>
+  </header>
+  <main class="section-content">
+    <h1>Cálculos de Emisiones</h1>
+    <form id="emissions-form" class="form-grid">
+      <div class="input-group">
+        <label for="electricidad-kwh">Electricidad (kWh)</label>
+        <input type="number" id="electricidad-kwh" name="electricidad-kwh" value="0">
+      </div>
+      <div class="input-group">
+        <label for="gasolina-litros">Gasolina (L)</label>
+        <input type="number" id="gasolina-litros" name="gasolina-litros" value="0">
+      </div>
+      <div class="input-group">
+        <label for="diesel-litros">Diésel (L)</label>
+        <input type="number" id="diesel-litros" name="diesel-litros" value="0">
+      </div>
+      <div class="input-group">
+        <label for="gas-natural-m3">Gas Natural (m³)</label>
+        <input type="number" id="gas-natural-m3" name="gas-natural-m3" value="0">
+      </div>
+    </form>
+    <button class="calculate-btn">Calcular Huella</button>
+  </main>
+</body>
+</html>

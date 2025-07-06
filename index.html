@@ -2,146 +2,57 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de Huella de Carbono | TERCA</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TERCA | Inicio</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Transforma Residuos<br>en Energía Limpia</h1>
-      <p>Calcula tu huella de carbono y descubre oportunidades de mejora.</p>
-      <button class="cta-btn" onclick="openTab(event, 'Datos')">Comenzar</button>
-    </div>
-  </section>
-
-  <div class="calculator-container">
-    <header class="calculator-header">
-      <div class="logo-text">TERCA</div>
-      <p class="slogan">TRANSFORMA RESIDUOS, CREA ENERGÍA.</p>
-    </header>
-
-    <nav class="tabs">
-      <button class="tab-link active" data-tab="Antecedentes">Antecedentes</button>
-      <button class="tab-link" data-tab="Datos">Datos Generales</button>
-      <button class="tab-link" data-tab="Factores">Factores de Emisión</button>
-      <button class="tab-link" data-tab="Calculos">Cálculos de Emisiones</button>
-      <button class="tab-link" data-tab="Resultados">Resultados</button>
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      <img src="images/logo.svg" alt="TERCA" height="32">
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="antecedentes.html" class="nav-link">Antecedentes</a>
+      <a href="datos.html" class="nav-link">Datos</a>
+      <a href="factores.html" class="nav-link">Factores</a>
+      <a href="calculos.html" class="nav-link">Cálculos</a>
+      <a href="resultados.html" class="nav-link">Resultados</a>
+      <a href="contact.html" class="cta">Contact Us</a>
     </nav>
+  </header>
 
-    <main id="main-content">
-      <!-- Antecedentes -->
-      <div id="Antecedentes" class="tab-content active">
-        <h2>¿Qué es la Huella de Carbono?</h2>
-        <p>La huella de carbono es un indicador ambiental que refleja la totalidad de gases de efecto invernadero (GEI) emitidos por una organización.</p>
-        <p>Esta calculadora te ayudará a estimar tu huella basándose en el GHG Protocol.</p>
-      </div>
-
-      <!-- Datos Generales -->
-      <div id="Datos" class="tab-content">
-        <h2>Información de la Empresa</h2>
-        <form id="info-form">
-          <div class="form-grid">
-            <div class="input-group">
-              <label for="nombre-empresa">Nombre de la empresa</label>
-              <input type="text" id="nombre-empresa" name="nombre-empresa">
-            </div>
-            <div class="input-group">
-              <label for="num-empleados">Número de empleados</label>
-              <input type="number" id="num-empleados" name="num-empleados">
-            </div>
-            <div class="input-group">
-              <label for="facturacion">Facturación Anual (MXN)</label>
-              <input type="number" id="facturacion" name="facturacion">
-            </div>
-            <div class="input-group">
-              <label for="reporte-ano">Año del Reporte</label>
-              <input type="number" id="reporte-ano" name="reporte-ano" placeholder="Ej. 2025">
-            </div>
-          </div>
-        </form>
-      </div>
-
-      <!-- Factores de Emisión -->
-      <div id="Factores" class="tab-content">
-        <h2>Configuración de Factores de Emisión</h2>
-        <form id="factors-form">
-          <div class="form-grid">
-            <div class="input-group">
-              <label for="fe-electricidad">Electricidad (tCO₂e/kWh)</label>
-              <input type="number" id="fe-electricidad" name="fe-electricidad" step="0.000001" value="0.000423">
-            </div>
-            <div class="input-group">
-              <label for="fe-gasolina">Gasolina (kgCO₂e/litro)</label>
-              <input type="number" id="fe-gasolina" name="fe-gasolina" step="0.0001" value="2.196">
-            </div>
-            <div class="input-group">
-              <label for="fe-diesel">Diésel (kgCO₂e/litro)</label>
-              <input type="number" id="fe-diesel" name="fe-diesel" step="0.0001" value="2.653">
-            </div>
-            <div class="input-group">
-              <label for="fe-gas-natural">Gas Natural (kgCO₂e/m³)</label>
-              <input type="number" id="fe-gas-natural" name="fe-gas-natural" step="0.0001" value="1.8">
-            </div>
-          </div>
-        </form>
-      </div>
-
-      <!-- Cálculos de Emisiones -->
-      <div id="Calculos" class="tab-content">
-        <h2>Fuentes de Emisión (Alcance 1 y 2)</h2>
-        <form id="emissions-form">
-          <fieldset>
-            <legend>Consumo Eléctrico (Alcance 2)</legend>
-            <div class="input-group">
-              <label for="electricidad-kwh">Consumo anual de electricidad (kWh)</label>
-              <input type="number" id="electricidad-kwh" name="electricidad-kwh" value="0">
-            </div>
-          </fieldset>
-          <fieldset>
-            <legend>Combustibles Fósiles (Alcance 1)</legend>
-            <div class="input-group">
-              <label for="gasolina-litros">Consumo anual de gasolina (Litros)</label>
-              <input type="number" id="gasolina-litros" name="gasolina-litros" value="0">
-            </div>
-            <div class="input-group">
-              <label for="diesel-litros">Consumo anual de diésel (Litros)</label>
-              <input type="number" id="diesel-litros" name="diesel-litros" value="0">
-            </div>
-            <div class="input-group">
-              <label for="gas-natural-m3">Consumo anual de Gas Natural (m³)</label>
-              <input type="number" id="gas-natural-m3" name="gas-natural-m3" value="0">
-            </div>
-          </fieldset>
-          <button type="button" class="calculate-btn">Calcular Huella</button>
-        </form>
-      </div>
-
-      <!-- Resultados -->
-      <div id="Resultados" class="tab-content">
-        <h2>Resultados de la Huella de Carbono</h2>
-        <div class="results-summary">
-          <p>La huella de carbono total estimada para el año <span id="result-year"></span> es:</p>
-          <h1 id="total-footprint">0.00</h1>
-          <p>toneladas de CO₂ equivalente (tCO₂e)</p>
-        </div>
-        <div class="results-breakdown">
-          <h3>Desglose de Emisiones:</h3>
-          <p><strong>Electricidad:</strong> <span id="electricidad-result">0.00</span> tCO₂e</p>
-          <p><strong>Combustibles:</strong> <span id="combustibles-result">0.00</span> tCO₂e</p>
-        </div>
-        <p class="disclaimer">
-          <strong>Nota:</strong> Los cálculos se basan en factores promedio de México. Para reporte oficial use SEMARNAT/CRE.
-        </p>
-      </div>
-    </main>
-  </div>
-
-  <script src="script.js"></script>
+  <main class="home-windows">
+    <section class="window">
+      <a href="antecedentes.html">
+        <img src="images/antecedentes.jpg" alt="Antecedentes">
+        <div class="overlay"><h2>Antecedentes</h2></div>
+      </a>
+    </section>
+    <section class="window">
+      <a href="datos.html">
+        <img src="images/datos.jpg" alt="Datos Generales">
+        <div class="overlay"><h2>Datos Generales</h2></div>
+      </a>
+    </section>
+    <section class="window">
+      <a href="factores.html">
+        <img src="images/factores.jpg" alt="Factores de Emisión">
+        <div class="overlay"><h2>Factores de Emisión</h2></div>
+      </a>
+    </section>
+    <section class="window">
+      <a href="calculos.html">
+        <img src="images/calculos.jpg" alt="Cálculos de Emisiones">
+        <div class="overlay"><h2>Cálculos de Emisiones</h2></div>
+      </a>
+    </section>
+    <section class="window">
+      <a href="resultados.html">
+        <img src="images/resultados.jpg" alt="Resultados">
+        <div class="overlay"><h2>Resultados</h2></div>
+      </a>
+    </section>
+  </main>
 </body>
 </html>
